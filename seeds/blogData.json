@@ -1,0 +1,32 @@
+[
+    {
+      "title": "Love this blog",
+      "dateCreated": "5/6/2023",
+      "creatorName": "Lernantino",
+      "commentContent": "I have to say I agree"
+    },
+    {
+        "title": "Hate this blog",
+        "dateCreated": "5/6/2023",
+        "creatorName": "Amiko",
+        "commentContent": "I have to say I disagree!!!!!"
+    },
+    {
+        "title": "I have no feelings towards this blog",
+        "dateCreated": "5/6/2023",
+        "creatorName": "Jordan",
+        "commentContent": "Hmmmmmmmmmmmmmmmmm"
+    },
+    {
+        "title": "Love this blog",
+        "dateCreated": "5/6/2023",
+        "creatorName": "Blake",
+        "commentContent": "I have to say I agree"
+    },
+    {
+        "title": "Love this blog",
+        "dateCreated": "5/6/2023",
+        "creatorName": "Lernantino",
+        "commentContent": "I have to say I agree"
+    }
+  ]

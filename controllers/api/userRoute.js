@@ -43,11 +43,57 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/'),(req, res) => {
+//get all users
+router.get('/', async (req, res) => {
+    try {
+      const users = await User.findAll();
+      res.json(users);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Error retrieving users from database');
+    }
+  });
 
-        const user =  User.findAll({
-        });
-        res.json(user);
+  //create a user
+router.post('/',(req, res) => {
+
+    const user =  User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+}).then((user) => {
+    res.json(user);
+  })
+  .catch((err) => {
+    res.json(err);
+  });
 }
+);
+
+//update a user
+router.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { email, password } = req.body;
+    
+    try {
+      const user = await User.findByPk(id);
+      
+      if (!user) {
+        return res.status(404).send('User not found');
+      }
+      
+      user.session.email = email;
+      user.session.password = password;
+      
+      await user.session.save();
+      
+      res.send('User updated successfully');
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Error updating user in database');
+    }
+  });
+
+  
 
 module.exports = router;

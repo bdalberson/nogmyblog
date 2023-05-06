@@ -18,21 +18,15 @@ BlogPost.init(
     dateCreated: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
+      unique: false,
     },
     creatorName: {   //I think this should be a FK
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [8],
-      },
     },
     commentContent: {
         type: DataTypes.TEXT,
-      
+    
       },
   },
   {
@@ -40,7 +34,7 @@ BlogPost.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'BlogPost',
+    modelName: 'blogPost',
   }
 );
 
