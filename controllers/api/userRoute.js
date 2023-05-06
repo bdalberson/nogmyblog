@@ -43,4 +43,11 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.get('/'),(req, res) => {
+
+        const user =  User.findAll({
+        });
+        res.json(user);
+}
+
 module.exports = router;
