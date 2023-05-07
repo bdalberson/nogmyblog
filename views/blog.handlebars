@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECH BLOG!!!!!</title>
+</head>
+
+<body>
+  <h1>All Blog Posts</h1>
+
+<div id="blog-posts-container"></div>
+
+{{#each blogPosts}}
+  <div class="blog-post">
+    <h2>{{this.title}}</h2>
+    <p>Created on {{this.dateCreated}}</p>
+    <p>{{this.content}}</p>
+  </div>
+{{/each}}
+
+  
+</body>
+
+</html>
+
+
+<script src="/javascript/blog.js"></script>
